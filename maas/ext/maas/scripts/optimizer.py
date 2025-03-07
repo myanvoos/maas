@@ -13,7 +13,6 @@ from maas.ext.maas.scripts.optimizer_utils.evaluation_utils import EvaluationUti
 from maas.ext.maas.scripts.optimizer_utils.graph_utils import GraphUtils           
 from maas.logs import logger
 from maas.ext.maas.models.utils import get_sentence_embedding
-from maas.ext.maas.models.mlp import OperatorSelectionMLP, EmbeddingReductionMLP
 from maas.ext.maas.models.controller import MultiLayerController
 
 QuestionType = Literal["math", "code", "qa"]

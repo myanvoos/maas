@@ -5,15 +5,15 @@
 🚩 Updates (2025-2-06) Initial upload to arXiv [PDF](https://arxiv.org/abs/2502.04180).
 
 
-## 🤔What is MaAS?
+## 🤔 What is Agentic Supernet?
 
-We for the first time shift the paradigm of automated multi-agent system design from seeking a (possibly non-existent) single optimal system to optimizing a probabilistic, continuous distribution of agentic architectures, termed the **agentic supernet**. 
+We *for the first time* shift the paradigm of automated multi-agent system design from seeking a (possibly non-existent) single optimal system to optimizing a probabilistic, continuous distribution of agentic architectures, termed the **agentic supernet**. 
 
 ![MaAS](assets/MaAS.png)
 
-## 👋🏻Method Overview
+## 👋🏻 Method Overview
 
-Building on this concept, we propose **MaAS**, which dynamically samples multi-agent systems that deliver satisfactory performance and token efficiency for user queries across different domains and varying levels of difficulty.We believe that MaAS paves the way toward fully automated, self-organizing, and self-evolving collective intelligence.
+Building on this concept, we propose **MaAS**, which dynamically samples multi-agent systems that deliver satisfactory performance and token efficiency for user queries across different domains and varying levels of difficulty. Concretely, MaAS takes diverse and varying difficulty queries as input and leverages a controller to sample a subnetwork from the agentic supernet for each query, corresponding to a customized multi-agent system. After the sampled system executes the query, MaAS receives environment feedback and jointly optimizes the supernet’s parameterized distribution and agentic operators.
 
 ![framework](assets/framework.png)
 
@@ -56,14 +56,11 @@ python -m examples.maas.optimize --dataset HumanEval --round 1 --sample 4 --exec
 If you find this repo useful, please consider citing our paper as follows:
 
 ```bibtex
-@misc{zhang2025multiagentarchitecturesearchagentic,
-      title={Multi-agent Architecture Search via Agentic Supernet}, 
-      author={Guibin Zhang and Luyang Niu and Junfeng Fang and Kun Wang and Lei Bai and Xiang Wang},
-      year={2025},
-      eprint={2502.04180},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2502.04180}, 
+@article{zhang2025agentic-supernet,
+  title={Multi-agent Architecture Search via Agentic Supernet},
+  author={Zhang, Guibin and Niu, Luyang and Fang, Junfeng and Wang, Kun and Bai, Lei and Wang, Xiang},
+  journal={arXiv preprint arXiv:2502.04180},
+  year={2025}
 }
 ```
 

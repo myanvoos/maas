@@ -40,8 +40,6 @@ class BaseBenchmark(ABC):
         self.controller = controller.to(self.device)
         self.operator_embeddings = operator_embeddings.to(self.device)
         self.optimizer = optimizer
-        for param in self.controller.parameters():
-            param.requires_grad = True
 
     PASS = "PASS"
     FAIL = "FAIL"
@@ -107,7 +105,7 @@ class BaseBenchmark(ABC):
     def get_result_columns(self) -> List[str]:
         pass
 
-    async def evaluate_all_problems(self, data: List[dict], graph: Callable, max_concurrent_tasks: int = 20, repetitions: int = 4, is_textgrad: bool = False):
+    async def evaluate_all_problems(self, data: List[dict], graph: Callable, max_concurrent_tasks: int = 30, repetitions: int = 4, is_textgrad: bool = False):
         semaphore = asyncio.Semaphore(max_concurrent_tasks)
         results = []
         previous_cost = 0.0
@@ -197,7 +195,7 @@ class BaseBenchmark(ABC):
         tasks = [sem_evaluate(problem) for problem in data]
         return await tqdm_asyncio.gather(*tasks, desc=f"Evaluating {self.name} problems", total=len(data))
     
-    async def run_evaluation(self, graph: Callable, va_list: List[int], is_test: bool, sample: int, is_textgrad: bool = False, max_concurrent_tasks: int = 20):
+    async def run_evaluation(self, graph: Callable, va_list: List[int], is_test: bool, sample: int, is_textgrad: bool = False, max_concurrent_tasks: int = 30):
         data = await self.load_data(va_list)
 
         if is_test == True:

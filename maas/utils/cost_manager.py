@@ -54,11 +54,6 @@ class CostManager(BaseModel):
             + completion_tokens * self.token_costs[model]["completion"]
         ) / 1000
         self.total_cost += cost
-        logger.info(
-            f"Total running cost: ${self.total_cost:.3f} | Max budget: ${self.max_budget:.3f} | "
-            f"Total prompt tokens: {self.total_prompt_tokens} | Total completion tokens: {self.total_completion_tokens} |"
-            f"Current cost: ${cost:.3f}, prompt_tokens: {prompt_tokens}, completion_tokens: {completion_tokens}"
-        )
 
     def get_total_prompt_tokens(self):
         """
@@ -106,7 +101,6 @@ class TokenCostManager(CostManager):
         """
         self.total_prompt_tokens += prompt_tokens
         self.total_completion_tokens += completion_tokens
-        logger.info(f"prompt_tokens: {prompt_tokens}, completion_tokens: {completion_tokens}")
 
 
 class FireworksCostManager(CostManager):
@@ -144,7 +138,3 @@ class FireworksCostManager(CostManager):
         token_costs = self.model_grade_token_costs(model)
         cost = (prompt_tokens * token_costs["prompt"] + completion_tokens * token_costs["completion"]) / 1000000
         self.total_cost += cost
-        logger.info(
-            f"Total running cost: ${self.total_cost:.4f}"
-            f"Current cost: ${cost:.4f}, prompt_tokens: {prompt_tokens}, completion_tokens: {completion_tokens}"
-        )

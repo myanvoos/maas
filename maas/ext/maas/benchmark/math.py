@@ -114,9 +114,9 @@ class MATHBenchmark(BaseBenchmark):
         except OSError:
             return "no code"
 
-    @retry(stop=stop_after_attempt(5), wait=wait_fixed(1), retry=retry_if_exception_type(Exception), reraise=True)
+    @retry(stop=stop_after_attempt(20), wait=wait_fixed(1), retry=retry_if_exception_type(Exception), reraise=True)
     async def _generate_output(self, graph, input_text):
-        return await asyncio.wait_for(graph(input_text), timeout=600)
+        return await asyncio.wait_for(graph(input_text), timeout=1500)
 
     async def evaluate_problem(self, problem: dict, graph: Callable):
         input_text = problem["problem"]
@@ -124,10 +124,8 @@ class MATHBenchmark(BaseBenchmark):
 
         try:
             output, cost, logprob = await self._generate_output(graph, input_text)
-            logger.info(f"Generated output: {output}, Logprob: {logprob}")
             if not output:
                 raise ValueError("output is empty")
-            logprob = torch.tensor(logprob, dtype=torch.float32, device=self.device, requires_grad=True)
 
             uni_score, extracted_output = self.calculate_score(expected_output, output)
 

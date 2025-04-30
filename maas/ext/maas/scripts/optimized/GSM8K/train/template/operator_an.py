@@ -11,4 +11,4 @@ class ScEnsembleOp(BaseModel):
     solution_letter: str = Field(default="", description="The letter of most consistent solution.")
 
 class SelfRefineOp(BaseModel):
-    response: str = Field(default="", description="Your solution for this problem")
+    response: str = Field(default="", description="Your refined solution for this problem")

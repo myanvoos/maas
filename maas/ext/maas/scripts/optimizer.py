@@ -58,6 +58,7 @@ class Optimizer:
         self.evaluation_utils = EvaluationUtils(self.root_path)
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.controller = MultiLayerController(device=self.device).to(self.device)
+        
         self.optimizer = torch.optim.Adam(self.controller.parameters(), lr=self.lr)          
 
     def optimize(self, mode: OptimizerType = "Graph"):
@@ -163,3 +164,5 @@ class Optimizer:
         data.append(new_data)
 
         self.data_utils.save_results(json_file_path, data)
+
+        return score

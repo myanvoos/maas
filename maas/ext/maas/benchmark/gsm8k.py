@@ -38,9 +38,9 @@ class GSM8KBenchmark(BaseBenchmark):
             return 0.0, prediction
         return 1.0 if abs(expected_output - prediction) <= 1e-6 else 0.0, prediction
 
-    @retry(stop=stop_after_attempt(5), wait=wait_fixed(1), retry=retry_if_exception_type(Exception), reraise=True)
+    @retry(stop=stop_after_attempt(20), wait=wait_fixed(1), retry=retry_if_exception_type(Exception), reraise=True)
     async def _generate_output(self, graph, input_text):
-        return await asyncio.wait_for(graph(input_text), timeout=600)
+        return await asyncio.wait_for(graph(input_text), timeout=1500)
 
     async def evaluate_problem(self, problem: dict, graph: Callable):
         input_text = problem["question"]
@@ -50,7 +50,6 @@ class GSM8KBenchmark(BaseBenchmark):
             output, cost, logprob = await self._generate_output(graph, input_text)
             if not output:
                 raise ValueError("output is empty")            
-            logprob = torch.tensor(logprob, dtype=torch.float32, device=self.device, requires_grad=True)
 
             predicted_number = self.extract_number(output)
             score, extracted_output = self.calculate_score(expected_output, predicted_number)

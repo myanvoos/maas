@@ -38,36 +38,39 @@ class Workflow:
         current_solution = "" 
         solutions = []
         sum_log_prob = 0.0
+
         for layer_idx, selected_names in enumerate(selected_names_layers):
             for op_name in selected_names:
                 selected_operator = self.selection_operator_instances[op_name]
 
                 if op_name in ["Generate", "GenerateCoT"]:
-                    result = await selected_operator(input=problem, instruction=prompt_custom.SOLUTION_PROMPT)
-                    current_solution = result.get('response', "")
-                    solutions.append(current_solution)
+                    result = await selected_operator(input=problem, instruction=prompt_custom.MATH_SOLVE_PROMPT)
+                    new_solution = result.get('response', "")
+                    solutions.append(new_solution)
                 elif op_name == "SelfRefine":
                     result = await selected_operator(problem=problem, solution=current_solution)
-                    current_solution = result.get('response', "")
-                    solutions.append(current_solution)
+                    new_solution = result.get('response', "")
+                    solutions.append(new_solution)
                 elif op_name == "Programmer":
-                    result = await selected_operator(problem=problem)
-                    refined_solution = await self.custom(input=problem + f"\nCode output: {result['output']}", instruction=prompt_custom.REFINE_ANSWER_PROMPT)
-                    current_solution = refined_solution['response']
-                    solutions.append(current_solution)
+                    result = await selected_operator(problem=problem, analysis=current_solution)
+                    refined_solution = await self.custom(input=problem + f"\nCode output: {result['code']}", instruction=prompt_custom.REFINE_ANSWER_PROMPT)
+
+                    new_solution = refined_solution['response']
+                    solutions.append(new_solution)
                 elif op_name == "ScEnsemble":
                     result = await selected_operator(problem=problem, solutions=solutions)
                     solutions = []
-                    current_solution = result.get('response', "")
-                    solutions.append(current_solution)      
+                    new_solution = result.get('response', "")
+                    solutions.append(new_solution)      
                 elif op_name == "MultiGenerateCoT":
-                    result = await selected_operator(input=problem,  instruction="")
+                    result = await selected_operator(input=problem,  instruction=prompt_custom.MATH_SOLVE_PROMPT)
                     if isinstance(result, dict) and 'response' in result:
                         for res in result['response']:
-                            current_solution = res.get('response', "")
-                            solutions.append(current_solution)
+                            new_solution = res.get('response', "")
+                            solutions.append(new_solution)
                     else:
                         logger.error(f"Expected dict with 'responses' from MultiGenerateCoT, got {type(result)}")
+                        new_solution = current_solution
                 else:
                     new_solution = current_solution
 
@@ -80,9 +83,11 @@ class Workflow:
             final_solution = final_solution['response']
         else:
             final_solution = current_solution
+        
         verification = await self.programmer(problem=problem, analysis=final_solution)
 
-        if verification['output']:
+        
+        if verification['output'] and verification['output'] != "No code generated":
             return verification['output'], self.llm.cost_manager.total_cost, sum_log_prob
         else:
             return final_solution, self.llm.cost_manager.total_cost, sum_log_prob

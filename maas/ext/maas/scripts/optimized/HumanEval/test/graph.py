@@ -1,7 +1,7 @@
 import torch
-import maas.ext.maas.scripts.optimized.HumanEval.train.template.prompt as prompt_custom
-import maas.ext.maas.scripts.optimized.HumanEval.train.template.operator as operator
-from maas.ext.maas.scripts.optimized.HumanEval.train.template.operator_registry import operator_mapping, operator_names
+import maas.ext.maas.scripts.optimized.HumanEval.test.template.prompt as prompt_custom
+import maas.ext.maas.scripts.optimized.HumanEval.test.template.operator as operator
+from maas.ext.maas.scripts.optimized.HumanEval.test.template.operator_registry import operator_mapping, operator_names
 from maas.provider.llm_provider_registry import create_llm_instance
 from maas.utils.cost_manager import CostManager
 from maas.logs import logger
@@ -74,7 +74,7 @@ class Workflow:
 
                 current_solution = new_solution
 
-            sum_log_prob += log_probs_layers[layer_idx].item()
+            sum_log_prob += log_probs_layers[layer_idx]
 
         test_result = await self.test_operator(problem=problem, solution=current_solution, entry_point=entry_point)
 

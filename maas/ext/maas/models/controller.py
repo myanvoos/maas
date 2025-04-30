@@ -4,16 +4,18 @@ import numpy as np
 from torch.special import gammaln
 from maas.ext.maas.models.utils import SentenceEncoder, sample_operators
 
+sentence_encoder = SentenceEncoder()
+
 class OperatorSelector(torch.nn.Module):
     def __init__(self, input_dim: int = 384, hidden_dim: int = 32, device=None, is_first_layer: bool = False):
         super().__init__()
+        self.device = device if device is not None else torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.is_first_layer = is_first_layer
         if self.is_first_layer:
             self.operator_encoder = torch.nn.Linear(input_dim, hidden_dim)
         else:
             self.operator_encoder = torch.nn.Linear(input_dim * 2, hidden_dim)
         self.query_encoder = torch.nn.Linear(input_dim, hidden_dim)
-        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     def forward(self, query_embed: torch.Tensor, operators_embed: torch.Tensor, prev_operators_embed: torch.Tensor = None):
         if query_embed.dim() == 1:
@@ -42,15 +44,15 @@ class OperatorSelector(torch.nn.Module):
 class MultiLayerController(torch.nn.Module):
     def __init__(self, input_dim: int = 384, hidden_dim: int = 32, num_layers: int = 4, device=None):
         super().__init__()
-        self.text_encoder = SentenceEncoder()
+        self.device = device if device is not None else torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        
         self.layers = torch.nn.ModuleList([
-            OperatorSelector(input_dim, hidden_dim, device, is_first_layer=(i == 0)) 
+            OperatorSelector(input_dim, hidden_dim, device=self.device, is_first_layer=(i == 0)) 
             for i in range(num_layers)
         ])
-        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') 
 
-    def forward(self, query, operators_embedding, selection_operator_names):
-        query_embedding = self.text_encoder(query).to(self.device)
+    def forward(self, query, operators_embedding, selection_operator_names, log_path=None):
+        query_embedding = sentence_encoder(query).to(self.device)
         operators_embedding = operators_embedding.to(self.device) 
         log_probs_layers = []
         selected_names_layers = []
@@ -61,9 +63,11 @@ class MultiLayerController(torch.nn.Module):
                 log_probs, probs = layer(query_embedding, operators_embedding)
             else:
                 log_probs, probs = layer(query_embedding, operators_embedding, prev_operators)
+                
             probs_1d = probs.squeeze(0)
             log_probs_1d = log_probs.squeeze(0)
-            selected_indices = sample_operators(probs_1d, threshold=0.25)
+
+            selected_indices = sample_operators(probs_1d, threshold=0.3)
             selected_indices_list = selected_indices.cpu().tolist()
             selected_names = [selection_operator_names[idx] for idx in selected_indices_list]
             penalty_applied = False

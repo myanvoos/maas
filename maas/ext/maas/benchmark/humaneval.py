@@ -109,10 +109,10 @@ class HumanEvalBenchmark(BaseBenchmark):
 
         return result
 
-    @retry(stop=stop_after_attempt(5), wait=wait_fixed(1), retry=retry_if_exception_type(Exception), reraise=True)
+    @retry(stop=stop_after_attempt(20), wait=wait_fixed(1), retry=retry_if_exception_type(Exception), reraise=True)
     async def _generate_output(self, graph, prompt, entry_point):
         # Generate output with a timeout of 200 seconds
-        return await asyncio.wait_for(graph(prompt, entry_point, self.log_path), timeout=600)
+        return await asyncio.wait_for(graph(prompt, entry_point, self.log_path), timeout=1500)
 
     async def evaluate_problem(self, data: dict, graph: Callable):
         input_text = data["prompt"]
@@ -126,7 +126,6 @@ class HumanEvalBenchmark(BaseBenchmark):
 
         try:
             prediction, cost, logprob = await self._generate_output(graph, input_text, data["entry_point"])
-            logprob = torch.tensor(logprob, dtype=torch.float32, device=self.device, requires_grad=True)
 
             if not prediction:
                 raise ValueError("Prediction is empty")

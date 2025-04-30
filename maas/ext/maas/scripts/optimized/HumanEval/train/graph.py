@@ -74,7 +74,7 @@ class Workflow:
 
                 current_solution = new_solution
 
-            sum_log_prob += log_probs_layers[layer_idx].item()
+            sum_log_prob += log_probs_layers[layer_idx]
 
         test_result = await self.test_operator(problem=problem, solution=current_solution, entry_point=entry_point)
 

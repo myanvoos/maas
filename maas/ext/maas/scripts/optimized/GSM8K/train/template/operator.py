@@ -109,7 +109,7 @@ class Programmer(Operator):
     def __init__(self, llm: LLM, name: str = "Programmer"):
         super().__init__(llm, name)
 
-    async def exec_code(self, code, timeout=30):
+    async def exec_code(self, code, timeout=100):
         loop = asyncio.get_running_loop()
         with concurrent.futures.ProcessPoolExecutor(max_workers=1) as executor:
             try:
@@ -131,7 +131,7 @@ class Programmer(Operator):
         response = await self._fill_node(CodeGenerateOp, prompt, mode, function_name="solve")
         return response
 
-    @retry(stop=stop_after_attempt(3), wait=wait_fixed(2))
+    @retry(stop=stop_after_attempt(5), wait=wait_fixed(2))
     async def __call__(self, problem: str, analysis: str = "None"):
         code = None
         output = None

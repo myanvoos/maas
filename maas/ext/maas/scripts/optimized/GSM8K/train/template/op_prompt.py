@@ -62,14 +62,6 @@ Demonstration Examples (GSM8K/MATH style):
    Final volume: $\frac{432}{3}\pi = 144\pi$  
    \boxed{144\pi}
 
-3. Problem: Smallest $n$ where $2^n > 10^3$
-   Analysis:
-   $10^3 = 1000$  
-   Test powers:  
-   $2^9=512 < 1000$  
-   $2^{10}=1024 > 1000$  
-   Minimum exponent: 10  
-   \boxed{10}
 
 Solution Protocol:
 1. Parse problem statement carefully
@@ -78,5 +70,4 @@ Solution Protocol:
 4. Verify intermediate results
 5. Present final answer in boxed notation
 
-Step-by-Step Analysis:
 """

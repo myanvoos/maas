@@ -10,6 +10,8 @@ class SentenceEncoder(torch.nn.Module):
     def __init__(self):
         super().__init__()
         self.model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+        for param in self.model.parameters():
+            param.requires_grad = False
 
     def forward(self, sentence):
         embeddings = self.model.encode(sentence)

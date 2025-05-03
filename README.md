@@ -2,7 +2,8 @@
 
 ## 📰 News
 
-🚩 Updates (2025-2-06) Initial upload to arXiv [PDF](https://arxiv.org/abs/2502.04180).
+- 🎉 Updates (2025-05-03) MaAS is accepted to ICML'25!
+- 🚩 Updates (2025-02-06) Initial upload to arXiv (see [PDF](https://arxiv.org/abs/2502.04180)).
 
 
 ## 🤔 What is Agentic Supernet?

@@ -1,0 +1,86 @@
+2025-07-15 11:54:35.286 | INFO     | maas.ext.maas.scripts.optimizer:_optimize_graph_maas:108 - maas/ext/maas/scripts/optimized/GSM8K/train/round_1
+2025-07-15 11:54:35.297 | INFO     | maas.ext.maas.scripts.optimizer:optimize:84 - Error occurred: Expecting value: line 2 column 1 (char 1). Retrying... (Attempt 1/1)
+2025-07-15 11:54:35.297 | INFO     | maas.ext.maas.scripts.optimizer:optimize:86 - Max retries reached. Moving to next round.
+2025-07-15 11:54:40.297 | INFO     | maas.ext.maas.scripts.optimizer:optimize:96 - Score for round 1: None
+2025-07-15 11:57:05.685 | INFO     | maas.ext.maas.scripts.optimizer:_optimize_graph_maas:108 - maas/ext/maas/scripts/optimized/GSM8K/train/round_1
+2025-07-15 11:57:06.467 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:124 - Starting training repetition 1/4
+2025-07-15 11:57:26.848 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 11:57:26.960 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 11:57:27.642 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 11:57:27.740 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: '-2'
+2025-07-15 11:57:27.740 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:172 - Repetition 1: Batch 1 Loss does not require grad and was skipped.
+2025-07-15 11:57:48.002 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 11:57:48.133 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: '-2'
+2025-07-15 11:57:48.466 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 11:57:48.768 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 11:57:48.769 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:172 - Repetition 1: Batch 2 Loss does not require grad and was skipped.
+2025-07-15 11:59:57.671 | INFO     | maas.ext.maas.scripts.optimizer:_optimize_graph_maas:108 - maas/ext/maas/scripts/optimized/GSM8K/train/round_1
+2025-07-15 11:59:58.478 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:124 - Starting training repetition 1/4
+2025-07-15 12:00:18.857 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:00:19.036 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:00:19.196 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:00:19.406 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:00:19.407 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:172 - Repetition 1: Batch 1 Loss does not require grad and was skipped.
+2025-07-15 12:00:39.670 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:00:39.765 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: '-2'
+2025-07-15 12:00:40.014 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: '-2'
+2025-07-15 12:00:40.338 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:00:40.338 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:172 - Repetition 1: Batch 2 Loss does not require grad and was skipped.
+2025-07-15 12:01:00.791 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: '-2'
+2025-07-15 12:01:00.831 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:01:01.290 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:01:01.291 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: '-2'
+2025-07-15 12:01:01.291 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:172 - Repetition 1: Batch 3 Loss does not require grad and was skipped.
+2025-07-15 12:01:21.462 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:01:21.761 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:01:21.788 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:01:21.807 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:01:21.807 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:172 - Repetition 1: Batch 4 Loss does not require grad and was skipped.
+2025-07-15 12:01:42.547 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:01:42.668 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: '-2'
+2025-07-15 12:01:42.754 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:01:42.786 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:01:42.787 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:172 - Repetition 1: Batch 5 Loss does not require grad and was skipped.
+2025-07-15 12:04:30.235 | INFO     | maas.ext.maas.scripts.optimizer:_optimize_graph_maas:108 - maas/ext/maas/scripts/optimized/GSM8K/train/round_1
+2025-07-15 12:04:31.045 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:124 - Starting training repetition 1/4
+2025-07-15 12:04:50.942 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: '-2'
+2025-07-15 12:04:51.687 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:04:51.834 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-07-15 12:04:51.913 | INFO     | maas.ext.maas.benchmark.gsm8k:evaluate_problem:63 - Maximum retries reached. Skipping this sample. Error: '-2'
+2025-07-15 12:04:51.914 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:172 - Repetition 1: Batch 1 Loss does not require grad and was skipped.
+2025-07-15 12:05:27.376 | INFO     | maas.ext.maas.scripts.optimizer:_optimize_graph_maas:108 - maas/ext/maas/scripts/optimized/GSM8K/train/round_1
+2025-07-15 12:05:28.144 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:124 - Starting training repetition 1/4
+2025-07-15 12:05:31.342 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:05:31.750 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:05:32.165 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:05:32.448 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:05:33.074 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:05:33.902 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:05:34.153 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:05:35.286 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:05:40.965 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:05:42.627 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:05:42.709 | INFO     | maas.ext.maas.scripts.optimizer:optimize:84 - Error occurred: expected Tensor as element 0 in argument 0, but got float. Retrying... (Attempt 1/1)
+2025-07-15 12:05:42.709 | INFO     | maas.ext.maas.scripts.optimizer:optimize:86 - Max retries reached. Moving to next round.
+2025-07-15 12:05:47.710 | INFO     | maas.ext.maas.scripts.optimizer:optimize:96 - Score for round 1: None
+2025-07-15 12:07:09.037 | INFO     | maas.ext.maas.scripts.optimizer:_optimize_graph_maas:108 - maas/ext/maas/scripts/optimized/GSM8K/train/round_5
+2025-07-15 12:07:09.762 | INFO     | maas.ext.maas.benchmark.benchmark:evaluate_all_problems:124 - Starting training repetition 1/4
+2025-07-15 12:07:12.474 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:12.857 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:13.712 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:14.064 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:14.102 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:15.343 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:15.534 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:15.791 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:18.535 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:19.707 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:19.895 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:21.505 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:21.848 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:25.237 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:26.379 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:27.934 | WARNING  | maas.utils.cost_manager:update_cost:49 - Model gemini-2.0-flash not found in TOKEN_COSTS.
+2025-07-15 12:07:27.982 | INFO     | maas.ext.maas.scripts.optimizer:optimize:84 - Error occurred: expected Tensor as element 0 in argument 0, but got float. Retrying... (Attempt 1/1)
+2025-07-15 12:07:27.982 | INFO     | maas.ext.maas.scripts.optimizer:optimize:86 - Max retries reached. Moving to next round.
+2025-07-15 12:07:32.982 | INFO     | maas.ext.maas.scripts.optimizer:optimize:96 - Score for round 1: None

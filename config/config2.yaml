@@ -1,14 +1,12 @@
-# Full Example: https://github.com/geekan/MetaGPT/blob/main/config/config2.example.yaml
-# Reflected Code: https://github.com/geekan/MetaGPT/blob/main/metagpt/config2.py
-# Config Docs: https://docs.deepwisdom.ai/main/en/guide/get_started/configuration.html
 llm:
-  api_type: "openai"  # or azure / ollama / groq etc.
-  model: "gpt-4o-mini"  #  gpt-3.5-turbo or gpt-4-turbo
-  base_url: ""  # or forward url / other llm url
-  api_key: ""
+  api_type: "gemini"
+  model: "gemini-2.0-flash"
+  base_url: "https://generativelanguage.googleapis.com/v1beta/"
+  api_key: "AIzaSyAtGjhqZ9LTroQfUIY1AIOIWHftPv5Sz98"
+
 models:
-  gpt-4o-mini:
-    api_type: "openai"  # or azure / ollama / groq etc.
-    model: "gpt-4o-mini"  #  gpt-3.5-turbo or gpt-4-turbo
-    base_url: ""  # or forward url / other llm url
-    api_key: ""
+  gemini-2.0-flash:
+    api_type: "gemini"
+    model: "gemini-2.0-flash"
+    base_url: "https://generativelanguage.googleapis.com/v1beta/"
+    api_key: "AIzaSyAtGjhqZ9LTroQfUIY1AIOIWHftPv5Sz98"

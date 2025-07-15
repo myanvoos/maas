@@ -2,11 +2,11 @@ llm:
   api_type: "gemini"
   model: "gemini-2.0-flash"
   base_url: "https://generativelanguage.googleapis.com/v1beta/"
-  api_key: "AIzaSyAtGjhqZ9LTroQfUIY1AIOIWHftPv5Sz98"
+  api_key: "API_KEY"
 
 models:
   gemini-2.0-flash:
     api_type: "gemini"
     model: "gemini-2.0-flash"
     base_url: "https://generativelanguage.googleapis.com/v1beta/"
-    api_key: "AIzaSyAtGjhqZ9LTroQfUIY1AIOIWHftPv5Sz98"
+    api_key: "API_KEY"

@@ -76,7 +76,7 @@ class Workflow:
 
                 current_solution = new_solution
 
-            sum_log_prob += log_probs_layers[layer_idx].item()
+            sum_log_prob += log_probs_layers[layer_idx]
 
         if len(solutions) > 1:
             final_solution = await self.sc_ensemble(solutions=solutions, problem=problem)

@@ -39,7 +39,7 @@ class Evaluator:
         if is_test:
             va_list = None 
         else:
-            va_list = None
+            va_list = list(range(20))  # Use only first 20 examples for prototyping, otherwise va_list = None
         return await benchmark.run_evaluation(configured_graph, va_list, is_test, params["sample"], params["is_textgrad"])
 
     async def _configure_graph(self, dataset, graph, params: dict):
